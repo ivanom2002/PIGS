@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection,query,where, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, setDoc, doc, collection, query, where, getDocs } from 'firebase/firestore/lite';
 
 
 // TODO: Replace the following with your app's Firebase project configuration
@@ -17,6 +17,32 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+async function createElder(id, ...data){
+    const usersRef = collection(db,"users")
+    await setDoc(doc(usersRef,id), {
+        caregiver: data.caregiverId,
+        email: data.email,
+        mainLanguage: data.language,
+        name: data.name,
+        role: "elder",
+        surname: data.surname,
+        telephoneNumber: data.telephoneNumber
+    })
+}
+
+async function createCaregiver(id, ...data){
+    const usersRef = collection(db,"users")
+    await setDoc(doc(usersRef,id), {
+        elders: data.elders,
+        email: data.email,
+        mainLanguage: data.language,
+        name: data.name,
+        role: "caregiver",
+        surname: data.surname,
+        telephoneNumber: data.telephoneNumber
+    })
+}
+
 async function getElders(db,caregiverId) {
     const q = query(collection(db,'users'),where('caregiver','==','/users/' + caregiverId));
     const querySnapshot = await getDocs(q);
@@ -25,6 +51,24 @@ async function getElders(db,caregiverId) {
     })
 }
 
-async function createDoc(id, data){
+
+
+async function getMedicine(elderId,id,...data){
+    const usersRef = collection(db,"users")
+    await getDoc()
+}
+
+async function getAllMedicine(elderId,...data){
+    const querySnapshot = await getDocs(collection(db,"users",elderId,"medicine"));
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+    })
+}
+
+async function getAlert(elderId, id, ...data){
+
+}
+
+async function getAllAlerts(elderId, ...data){
 
 }

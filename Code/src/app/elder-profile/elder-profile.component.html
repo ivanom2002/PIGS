@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <img src="/assets/elderEjemplo.jpg" alt="Elderly User Image" class="user-image">
+        <h2>{{elderUser1.firstName}}</h2>
+        <h2>{{elderUser1.lastName}}</h2>
+        <h2>10:00</h2>
+        <h3>Tuesday, 2 of April</h3>
+
+        <div class="button-container">
+            <button type="button" class="sosbtn">SOS</button>
+            <button type="button" class="callCaregiverBtn">CALL CAREGIVER</button>
+        </div>
+
+        <p>Enfermedades:</p>
+        <ul>
+            <li>{{elderUser1.diseaseList[0]}}</li>
+            <li>{{elderUser1.diseaseList[1]}}</li>
+            <li>{{elderUser1.diseaseList[2]}}</li>
+        </ul>
+
+        <p>Tratamientos:</p>
+        <ul>
+            <li>{{elderUser1.treatmentList[0]}}</li>
+            <li>{{elderUser1.treatmentList[1]}}</li>
+            <li>{{elderUser1.treatmentList[2]}}</li>
+        </ul>
+    </body>
+</html>

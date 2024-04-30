@@ -1,0 +1,78 @@
+/* Estilos para el header */
+header {
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  margin-bottom: auto;
+}
+
+header div {
+  width: 50%;
+}
+
+.header-navigator{
+  display: flex;
+  flex-direction: row;
+}
+
+.header-navigator a {
+  margin: 1rem;
+  max-width: 50%;
+}
+
+.logo-header{
+  max-width: 50%;
+  max-height: 100px;
+}
+
+/* Estilos para el footer */
+footer {
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.logo-container {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body, html {
+  margin: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./creacion-recordatorio.component.css">
+</head>
+<body>
+
+  <!-- Panel de notificaciones -->
+  <div class="notification-panel">
+    <div class="notification-item">
+      <div class="notification-text">Internet: ES</div>
+      <div class="notification-icons">
+        <img src="/assets/wifi-icon.png" alt="Wifi Icon">
+        <img src="/assets/battery-icon.png" alt="Battery Icon">
+        <span class="percentage-icon">90%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel de medicamentos -->
+  <div class="login-container">
+    <div class="avatar-container">
+      <img src="/assets/pill.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <span class="input-icon" style="background-image: url('/assets/medicine-icon.png')"></span>
+          <input type="text" id="medicine-name" name="medicine-name" class="form-control with-icon" placeholder="MEDICINE NAME" required>
+        </div>
+        <div class="form-group">
+          <span class="input-icon" style="background-image: url('/assets/time-icon.png')"></span>
+          <input type="text" id="time" name="time" class="form-control with-icon" placeholder="TIME" required>
+        </div>
+        <div class="form-group">
+          <span class="input-icon" style="background-image: url('/assets/frequency-icon.png')"></span>
+          <input type="text" id="frequency" name="frequency" class="form-control with-icon" placeholder="FREQUENCY" required>
+        </div>
+        <div class="form-group">
+          <span class="input-icon" style="background-image: url('/assets/duration-icon.png')"></span>
+          <input type="text" id="duration" name="duration" class="form-control with-icon" placeholder="DURATION" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">SAVE REMINDER</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

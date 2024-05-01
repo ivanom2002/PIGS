@@ -1,0 +1,101 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.form-container {
+  width: 300px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-container {
+  margin-bottom: 50px; /* Ajusta el margen inferior para aumentar la separación */
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.btn-primary {
+  background-color: #ffff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.notification-panel {
+  background-color: #D9D9D9; /* Color de fondo del panel de notificaciones */
+  color: #000; /* Color del texto en el panel de notificaciones */
+  padding: 4px; /* Espaciado interno del panel de notificaciones */
+  position: fixed; /* Fija el panel de notificaciones en la parte superior */
+  top: 0; /* Posiciona el panel de notificaciones en la parte superior */
+  left: 50%; /* Centra el panel de notificaciones horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición del panel de notificaciones */
+  width: calc(100% - 20px); /* Establece el ancho del panel de notificaciones igual al ancho del contenedor de inputs */
+  max-width: 300px; /* Establece el ancho máximo del panel de notificaciones */
+}
+
+.notification-item {
+  display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
+  justify-content: space-between; /* Distribuye los elementos horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+  margin-bottom: 5px; /* Espaciado entre elementos de notificación */
+}
+
+.notification-icons {
+  display: flex; /* Utiliza flexbox para alinear los iconos */
+  align-items: center; /* Centra verticalmente los iconos */
+}
+
+.notification-item img {
+  width: 16px; /* Ajusta el tamaño de los iconos */
+  margin-right: 5px; /* Agrega espacio entre los iconos */
+
+}
+
+.percentage-icon {
+  font-weight: bold; /* Hace que el porcentaje sea en negrita */
+}
+

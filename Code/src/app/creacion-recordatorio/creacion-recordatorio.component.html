@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./creacion-recordatorio.component.css">
+
 </head>
 <body>
 
   <!-- Panel de notificaciones -->
   <div class="notification-panel">
     <div class="notification-item">
-      <div class="notification-text">Internet: ES</div>
+      <div class="notification-text">Internet: EN</div>
       <div class="notification-icons">
         <img src="/assets/wifi-icon.png" alt="Wifi Icon">
         <img src="/assets/battery-icon.png" alt="Battery Icon">
@@ -33,15 +33,16 @@
         </div>
         <div class="form-group">
           <span class="input-icon" style="background-image: url('/assets/time-icon.png')"></span>
-          <input type="text" id="time" name="time" class="form-control with-icon" placeholder="TIME" required>
-        </div>
-        <div class="form-group">
-          <span class="input-icon" style="background-image: url('/assets/frequency-icon.png')"></span>
-          <input type="text" id="frequency" name="frequency" class="form-control with-icon" placeholder="FREQUENCY" required>
+          <input type="time" id="time" name="time" class="form-control with-icon" placeholder="TIME" required>
         </div>
         <div class="form-group">
           <span class="input-icon" style="background-image: url('/assets/duration-icon.png')"></span>
-          <input type="text" id="duration" name="duration" class="form-control with-icon" placeholder="DURATION" required>
+          <select class="form-control with-icon" id="duration" name="duration" required>
+            <option value="1">1 day</option>
+            <option value="7">1 week</option>
+            <option value="30">1 month</option>
+            <option value="60">2 months</option>
+          </select>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block">SAVE REMINDER</button>
@@ -51,3 +52,4 @@
   </div>
 </body>
 </html>
+

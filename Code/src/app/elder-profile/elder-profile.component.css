@@ -1,0 +1,98 @@
+/* Styles for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.user-image {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20%; /* Make the image circular */
+}
+
+/* Styles for headings */
+h2 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+h3 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Styles for buttons container */
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles for buttons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.sosbtn {
+    background-color: #ff0000;
+    margin-right: 5px;
+    color: #fff;
+}
+
+.callCaregiverBtn {
+    background-color: #007bff;
+    margin-left: 5px;
+    color: #fff;
+}
+
+
+/* Styles for lists */
+p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+ul {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block; /* Displaying li elements one above the other */
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}

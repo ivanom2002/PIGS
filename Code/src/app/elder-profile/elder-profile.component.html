@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{title}}</title>
-    </head>
-    <body>
-        <img src="/assets/elderEjemplo.jpg" alt="Elderly User Image" class="user-image">
-        <h2>{{elderUser1.firstName}}</h2>
-        <h2>{{elderUser1.lastName}}</h2>
-        <h2>10:00</h2>
-        <h3>Tuesday, 2 of April</h3>
+<div class="profileContainer">
+    <div class="avatar-container">
+      <img src="/assets/avatar.jpg" alt="Avatar" class="avatar">
+    </div>
+    <h2>{{elderUser1.firstName}} {{elderUser1.lastName}}</h2>
+    <h2>10:00</h2>
+    <h3>Tuesday, 2 of April</h3>
 
-        <div class="button-container">
-            <button type="button" class="sosbtn">SOS</button>
-            <button type="button" class="callCaregiverBtn">CALL CAREGIVER</button>
-        </div>
+    <div class="button-container">
+        <button type="button" class="sosbtn">SOS</button>
+        <button type="button" class="callCaregiverBtn">
+          <a href="tel:+34681032952">CALL CAREGIVER</a>
+        </button>
+        <button type="button" class="addCaregiver" (click)="toggleForm()">Add Caregiver</button>
+    </div>
 
-        <p>Enfermedades:</p>
-        <ul>
-            <li>{{elderUser1.diseaseList[0]}}</li>
-            <li>{{elderUser1.diseaseList[1]}}</li>
-            <li>{{elderUser1.diseaseList[2]}}</li>
+    <div *ngIf="showForm" class="phoneForm">
+      <form>
+        <label for="phoneNumber">Número de teléfono:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        <button type="submit">Añadir</button>
+      </form>
+    </div>
+
+    <div class="container">
+      <div class="dropdown">
+        <button class="btn btn-primary" (click)="toggleDiseasesDropdown()">Enfermedades</button>
+        <ul *ngIf="showDiseasesDropdown">
+          <li *ngFor="let disease of elderUser1.diseaseList">{{ disease }}</li>
         </ul>
-
-        <p>Tratamientos:</p>
-        <ul>
-            <li>{{elderUser1.treatmentList[0]}}</li>
-            <li>{{elderUser1.treatmentList[1]}}</li>
-            <li>{{elderUser1.treatmentList[2]}}</li>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-primary" (click)="toggleTreatmentsDropdown()">Tratamientos</button>
+        <ul *ngIf="showTreatmentsDropdown">
+          <li *ngFor="let treatment of elderUser1.treatmentList">{{ treatment }}</li>
         </ul>
-    </body>
-</html>
+      </div>
+    </div>
+</div>

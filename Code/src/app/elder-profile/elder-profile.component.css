@@ -1,18 +1,8 @@
 /* Styles for body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-}
-
-.user-image {
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    width: 100px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 20%; /* Make the image circular */
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Styles for headings */
@@ -32,6 +22,17 @@ h3 {
     margin: 5px 0;
     font-size: 18px;
     color: #666;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Styles for buttons container */
@@ -60,6 +61,22 @@ button {
     background-color: #007bff;
     margin-left: 5px;
     color: #fff;
+}
+
+.callCaregiverBtn a {
+  color: inherit; /* Hereda el color del texto del botón */
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.addCaregiver {
+  background-color: #007bff;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.addCaregiver a {
+  color: inherit; /* Hereda el color del texto del botón */
+  text-decoration: none; /* Quita el subrayado del enlace */
 }
 
 
@@ -95,4 +112,47 @@ li {
     display: flex;
     justify-items: center;
     justify-content: center;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dropdown{
+  margin: 10px;
+}
+
+.phoneForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneForm label {
+  margin-bottom: 10px;
+}
+
+.phoneForm input[type="tel"],
+.phoneForm button {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.phoneForm button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

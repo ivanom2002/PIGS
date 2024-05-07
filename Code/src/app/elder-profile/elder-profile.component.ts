@@ -13,4 +13,15 @@ export class ElderProfileComponent {
     diseaseList: ['Diabetes', 'Reuma', 'Artrosis'],
     treatmentList: ['Insulina', 'Glucosamina', 'Artrostop']
   };
+
+  showDiseasesDropdown = false;
+  showTreatmentsDropdown = false;
+
+  toggleDiseasesDropdown() {
+    this.showDiseasesDropdown = !this.showDiseasesDropdown;
+  }
+
+  toggleTreatmentsDropdown() {
+    this.showTreatmentsDropdown = !this.showTreatmentsDropdown;
+  }
 }

@@ -5,12 +5,14 @@ import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from "./home/home.component"; // Se agregó la importación del componente HomeComponent
 import { CreacionRecordatorioComponent } from './creacion-recordatorio/creacion-recordatorio.component';
+import { ElderProfileComponent } from "./elder-profile/elder-profile.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
-  { path: 'creacion-recordatorio', component: CreacionRecordatorioComponent }
+  { path: 'creacion-recordatorio', component: CreacionRecordatorioComponent },
+  { path: 'elderProfile', component: ElderProfileComponent}
 ];
 
 @NgModule({

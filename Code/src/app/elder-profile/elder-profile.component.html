@@ -2,14 +2,14 @@
     <div class="avatar-container">
       <img src="/assets/avatar.jpg" alt="Avatar" class="avatar">
     </div>
-    <h2>{{elderUser1.firstName}} {{elderUser1.lastName}}</h2>
+    <h2>{{userData.user.name}} {{userData.user.surname}}</h2>
     <h2>10:00</h2>
     <h3>Tuesday, 2 of April</h3>
 
     <div class="button-container">
         <button type="button" class="sosbtn">SOS</button>
         <button type="button" class="callCaregiverBtn">
-          <a href="tel:+34681032952">CALL CAREGIVER</a>
+          <a [href]="userData.user.telephoneNumber">CALL CAREGIVER</a>
         </button>
         <button type="button" class="addCaregiver" (click)="toggleForm()">Add Caregiver</button>
     </div>

@@ -3,7 +3,7 @@
     <img src="/assets/avatar.jpg" alt="Avatar" class="avatar">
   </div>
   <div class="form-container">
-    <form>
+    <form (submit)="onSubmit($event)">
       <div class="form-group">
         <label for="username">Ususario</label>
         <input type="text" id="username" name="username" class="form-control" placeholder="Introduce tu usuario" required>

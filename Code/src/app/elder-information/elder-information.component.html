@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="avatar-container">
+    <img src="/assets/avatar.jpg" alt="Avatar" class="avatar">
+    <strong>{{ firstName }} {{ lastName }} {{ maternalLastName }}</strong>
+  <div class="map-container" id="map"></div>
+  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Inicializar el mapa
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    // Añadir una capa de mapa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Añadir un marcador en la posición especificada
+    L.marker([51.5, -0.09]).addTo(map)
+      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+      .openPopup();
+  </script>
+</body>
+</html>

@@ -10,6 +10,7 @@ import { CreacionRecordatorioComponent } from './creacion-recordatorio/creacion-
 import { HomeComponent } from './home/home.component';
 import { ElderProfileComponent } from './elder-profile/elder-profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ElderInformationComponent } from './elder-information/elder-information.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     SignUpComponent,
     CreacionRecordatorioComponent,
     HomeComponent,
-    ElderProfileComponent
+    ElderProfileComponent,
+    ElderInformationComponent
   ],
   imports: [
     BrowserModule,

@@ -110,8 +110,20 @@ export async function getUser(uuid) {
         const snap = await getDoc(docRef)
 
         if(snap.exists()) {
-            const userData = snap.data()
-            return userData
+            // Obtener las colecciones internas del usuario
+            const subcollections = ['medicine']; // Nombres de las subcolecciones
+            const coleccionesPromises = subcollections.map(async (subcollection) => {
+                const querySnapshot = await getDocs(collection(docRef, subcollection));
+                const documentos = querySnapshot.docs.map((doc) => doc.data());
+                return { [subcollection]: documentos };
+            });
+
+            const colecciones = await Promise.all(coleccionesPromises);
+
+            // Combinar los datos del usuario y sus colecciones internas
+            const datosCompletos = { ...snap.data(), ...colecciones };
+
+            return datosCompletos
         } else {
             return null
         }

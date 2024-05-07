@@ -16,6 +16,11 @@ export class ElderProfileComponent {
 
   showDiseasesDropdown = false;
   showTreatmentsDropdown = false;
+  showForm: boolean = false;
+
+  toggleForm() {
+    this.showForm = !this.showForm;
+  }
 
   toggleDiseasesDropdown() {
     this.showDiseasesDropdown = !this.showDiseasesDropdown;
@@ -25,3 +30,5 @@ export class ElderProfileComponent {
     this.showTreatmentsDropdown = !this.showTreatmentsDropdown;
   }
 }
+
+

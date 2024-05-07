@@ -68,6 +68,17 @@ button {
   text-decoration: none; /* Quita el subrayado del enlace */
 }
 
+.addCaregiver {
+  background-color: #007bff;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.addCaregiver a {
+  color: inherit; /* Hereda el color del texto del botón */
+  text-decoration: none; /* Quita el subrayado del enlace */
+}
+
 
 /* Styles for lists */
 p {
@@ -121,4 +132,27 @@ li {
 
 .dropdown{
   margin: 10px;
+}
+
+.phoneForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneForm label {
+  margin-bottom: 10px;
+}
+
+.phoneForm input[type="tel"],
+.phoneForm button {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.phoneForm button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

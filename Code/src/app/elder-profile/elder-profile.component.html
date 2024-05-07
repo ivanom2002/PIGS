@@ -11,6 +11,15 @@
         <button type="button" class="callCaregiverBtn">
           <a href="tel:+34681032952">CALL CAREGIVER</a>
         </button>
+        <button type="button" class="addCaregiver" (click)="toggleForm()">Add Caregiver</button>
+    </div>
+
+    <div *ngIf="showForm" class="phoneForm">
+      <form>
+        <label for="phoneNumber">Número de teléfono:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        <button type="submit">Añadir</button>
+      </form>
     </div>
 
     <div class="container">

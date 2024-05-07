@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreacionRecordatorioComponent } from './creacion-recordatorio/creacion-recordatorio.component';
 import { HomeComponent } from './home/home.component';
 import { ElderProfileComponent } from './elder-profile/elder-profile.component';
+import { ElderInformationComponent } from './elder-information/elder-information.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ElderProfileComponent } from './elder-profile/elder-profile.component';
     SignUpComponent,
     CreacionRecordatorioComponent,
     HomeComponent,
-    ElderProfileComponent
+    ElderProfileComponent,
+    ElderInformationComponent
   ],
   imports: [
     BrowserModule,

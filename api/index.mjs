@@ -1,8 +1,13 @@
 import express from 'express'
+import cors from 'cors'
+import morgan from "morgan";
 import { getUser, login, register } from "../firebase/config.js";
 
-
 const app = express()
+app.use(morgan('dev'))
+app.use(cors({
+	origin: 'http://localhost:4200'
+}));
 const port = 3000
 
 app.get('/', (req, res) => {
@@ -50,6 +55,7 @@ app.get('/user', async (req, res) => {
 	const user = await getUser(req.query.uuid)
 
 	if (user != null) {
+		res.header('Access-Control-Allow-Origin', 'http://localhost:4200')
 		res.status(200).json({
 			user
 		})

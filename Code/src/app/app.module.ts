@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreacionRecordatorioComponent } from './creacion-recordatorio/creacion-recordatorio.component';
 import { HomeComponent } from './home/home.component';
 import { ElderProfileComponent } from './elder-profile/elder-profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ElderProfileComponent } from './elder-profile/elder-profile.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

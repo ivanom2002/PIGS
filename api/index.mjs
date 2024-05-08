@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import morgan from "morgan";
-import { getUser, login, register } from "../firebase/config.js";
+import {getUser, login, register, getUsersByRole, getUserIDFromTelephone, connectUsers} from "../firebase/config.js";
 
 const app = express()
 app.use(morgan('dev'))
@@ -60,6 +60,19 @@ app.get('/user', async (req, res) => {
 			user
 		})
 	} else {
+		res.status(500)
+	}
+})
+
+app.get('/probando', async (req,res) => {
+	const response = await connectUsers(req.query.telephone,req.query.idactual)
+
+	if(response != null) {
+		res.header('Access-Control-Allow-Origin', 'http://localhost:4200')
+		res.status(200).json({
+			response
+		})
+	}else{
 		res.status(500)
 	}
 })

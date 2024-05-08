@@ -18,33 +18,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-async function createElder(id, ...data){
-    const usersRef = collection(db,"users")
-    await setDoc(doc(usersRef,id), {
-        caregiver: data.caregiverId,
-        email: data.email,
-        mainLanguage: data.language,
-        name: data.name,
-        role: "elder",
-        surname: data.surname,
-        telephoneNumber: data.telephoneNumber
-    })
-}
 
-async function createCaregiver(id, ...data){
-    const usersRef = collection(db,"users")
-    await setDoc(doc(usersRef,id), {
-        elders: data.elders,
-        email: data.email,
-        mainLanguage: data.language,
-        name: data.name,
-        role: "caregiver",
-        surname: data.surname,
-        telephoneNumber: data.telephoneNumber
-    })
-}
-
-async function getElders(db,caregiverId) {
+async function getEldersForCaregiver(db,caregiverId) {
     const q = query(collection(db,'users'),where('caregiver','==','/users/' + caregiverId));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
@@ -52,27 +27,6 @@ async function getElders(db,caregiverId) {
     })
 }
 
-
-
-async function getMedicine(elderId,id,...data){
-    const usersRef = collection(db,"users")
-    await getDoc()
-}
-
-async function getAllMedicine(elderId,...data){
-    const querySnapshot = await getDocs(collection(db,"users",elderId,"medicine"));
-    querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-    })
-}
-
-async function getAlert(elderId, id, ...data){
-
-}
-
-async function getAllAlerts(elderId, ...data){
-
-}
 export async function login(email, password) {
     const userCredential = await signInWithEmailAndPassword(auth, email, password)
     const user = userCredential.user
@@ -130,4 +84,62 @@ export async function getUser(uuid) {
     } catch (error) {
         return null
     }
+}
+
+export async function getUsersByRole(role){
+
+    const q = query(collection(db,'users'),where('role','==',role))
+    const querySnapshot = await getDocs(q)
+    let users = 3
+    querySnapshot.forEach((doc) => {
+        users = [doc.id,doc.data()]
+    })
+
+    return users
+
+}
+
+export async function getUserIDFromTelephone(telephone){
+    const q = query(collection(db,'users'),where('telephoneNumber','==',telephone))
+    const querySnapshot = await getDocs(q)
+
+    querySnapshot.forEach((doc) => {
+        return doc.id
+    })
+    return null
+}
+
+async function getDocInfo(id){
+    const docRef = doc(db,'users',id)
+    const docSnap = await getDoc(docRef)
+    if(docSnap.exists()){
+        return [docSnap.id,docSnap.data()]
+    }else{
+        return null
+    }
+}
+export async function isCaregiver(uuidCaregiver) {
+    const docInfo = await getDocInfo(uuidCaregiver)
+    return docInfo[1].role === "caregiver";
+}
+
+export async function connectUsers(telephoneCaregiver,uuidElder) {
+    const uuidCaregiver = await getUserIDFromTelephone(telephoneCaregiver)
+
+    if(!await isCaregiver(uuidCaregiver)) return 'No es un cuidador'
+    if(await isCaregiver(uuidElder)) return 'Es un cuidador en vez de un anciano'
+
+    const docRefCaregiver = doc(db, 'users', uuidCaregiver)
+    const docRefElder = doc(db, 'users', uuidElder)
+
+    //Se lee y modifica "elders" y después añade "elders" al doc
+    const docSnap = await getDoc(docRefCaregiver)
+    if(docSnap.exists()){
+
+        let elders = docSnap.data().elders
+        elders.push(docRefElder)
+        await setDoc(docRefCaregiver, {elders:elders},{merge: true})
+    }
+    await setDoc(docRefElder,{caregiver:'/users/' + uuidElder},{merge: true})
+    return true
 }

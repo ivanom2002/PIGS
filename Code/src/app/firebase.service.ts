@@ -20,4 +20,9 @@ export class FirebaseService {
     return this.http.get(urlGet)
 
   }
+
+  register(name: string, surname: string, email: string, telephone: string, password: string, language: string, role: string) {
+    const urlRegister = `http://localhost:3000/register?email=${email}&password=${password}&language=ES&role=${role}&name=${name}&surname=${surname}&telephoneNumber=${telephone}&caregiver=null`
+    return this.http.put(urlRegister, null)
+  }
 }

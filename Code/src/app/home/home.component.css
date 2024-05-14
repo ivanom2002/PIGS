@@ -14,6 +14,8 @@ header div {
   width: 50%;
 }
 
+
+
 .header-navigator{
   display: flex;
   flex-direction: row;
@@ -22,6 +24,7 @@ header div {
 .header-navigator a {
   margin: 1rem;
   max-width: 50%;
+  color: white;
 }
 
 .logo-header{
@@ -65,6 +68,7 @@ footer {
 }
 
 main {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;

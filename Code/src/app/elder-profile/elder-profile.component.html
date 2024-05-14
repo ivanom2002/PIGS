@@ -3,15 +3,15 @@
       <img src="/assets/avatar.jpg" alt="Avatar" class="avatar">
     </div>
     <h2>{{userData.user.name}} {{userData.user.surname}}</h2>
-    <h2>10:00</h2>
-    <h3>Tuesday, 2 of April</h3>
+    <h2>11:15</h2>
+    <h3>Martes, 14 of Mayo</h3>
 
     <div class="button-container">
         <button type="button" class="sosbtn">SOS</button>
         <button type="button" class="callCaregiverBtn">
-          <a [href]="userData.user.telephoneNumber">CALL CAREGIVER</a>
+          <a href="tel:+34618964174">Llamar cuidador</a>
         </button>
-        <button type="button" class="addCaregiver" (click)="toggleForm()">Add Caregiver</button>
+        <button type="button" class="addCaregiver" (click)="toggleForm()">Añadir cuidador</button>
     </div>
 
     <div *ngIf="showForm" class="phoneForm">
